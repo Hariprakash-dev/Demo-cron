@@ -8,14 +8,17 @@ curl_setopt_array($ch, [
 $response = curl_exec($ch);
 curl_close($ch);
 
-$playerIds = json_decode($response, true);
+// $playerIds = json_decode($response, true);
 
-print_r($playerIds);
+$playerIds = "8065122c-9619-4d81-b01c-595e73f54f8f";
 
-if (!$playerIds || count($playerIds) === 0) {
-    echo "No notifications to send.\n";
-    exit;
-}
+
+// print_r($playerIds);
+
+// if (!$playerIds || count($playerIds) === 0) {
+//     echo "No notifications to send.\n";
+//     exit;
+// }
 
 $data = [
     "app_id" => $_ENV['ONESIGNAL_APP_ID'],
