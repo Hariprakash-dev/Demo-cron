@@ -1,6 +1,7 @@
 [cron]
-schedule = "*/5 * * * *"
-command = "php cron.php"
+schedule = "*/5 * * * *"  # every 5 minutes
+command = "php /app/cron.php"
+
 
 
 
