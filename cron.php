@@ -8,26 +8,27 @@ curl_setopt_array($ch, [
 $response = curl_exec($ch);
 curl_close($ch);
 
-// $playerIds = json_decode($response, true);
+$playerIds = json_decode($response, true);
 
-$playerIds = "8065122c-9619-4d81-b01c-595e73f54f8f";
+print_r($playerIds);
+
+if (!$playerIds || count($playerIds) === 0) {
+    echo "No notifications to send.\n";
+    exit;
+}
 
 
-// print_r($playerIds);
-
-// if (!$playerIds || count($playerIds) === 0) {
-//     echo "No notifications to send.\n";
-//     exit;
-// }
 
 $data = [
     "app_id" => $_ENV['ONESIGNAL_APP_ID'],
     "include_player_ids" => $playerIds,
-    "headings" => ["en" => "Reminder"],
-    "contents" => ["en" => "You have a task reminder now!"],
+    "headings" => ["en" => "Hello"],
+    "contents" => ["en" => "testing ngork"],
 ];
 
+
 $ch = curl_init("https://onesignal.com/api/v1/notifications");
+
 curl_setopt_array($ch, [
     CURLOPT_POST => true,
     CURLOPT_HTTPHEADER => [
@@ -44,4 +45,6 @@ curl_close($ch);
 
 echo "HTTP: $httpCode\n";
 echo "Response: $response\n";
-echo "Push sent successfully\n";
+
+
+echo "Push sent successfully";
