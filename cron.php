@@ -8,10 +8,16 @@ $db_user = "root";
 $db_pass = "";
 $db_name = "360clouderp";
 $conn = "";
-$conn = mysqli_connect($db_server,$db_user,$db_pass,$db_name);
-if ($conn) {
+try {
+    $conn = mysqli_connect($db_server,$db_user,$db_pass,$db_name);
+    if ($conn) {
     echo "You are connected !";
     
 }else {
     echo "Could not connect";
 }
+} catch (\Throwable $th) {
+    echo "not print";
+}
+
+
