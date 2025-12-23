@@ -21,7 +21,7 @@ if (!$playerIds || count($playerIds) === 0) {
 
 $data = [
     "app_id" => $_ENV['ONESIGNAL_APP_ID'],
-    "include_player_ids" => [$playerIds],
+    "include_player_ids" => $playerIds,
     "headings" => ["en" => "Hello"],
     "contents" => ["en" => "testing ngork"],
 ];
