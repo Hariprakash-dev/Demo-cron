@@ -10,6 +10,8 @@ curl_close($ch);
 
 $playerIds = json_decode($response, true);
 
+echo $playerIds;
+
 if (!$playerIds || count($playerIds) === 0) {
     echo "No notifications to send.\n";
     exit;
