@@ -4,7 +4,7 @@ echo "Cron executed at " . date('Y-m-d H:i:s') . "\n";
 
 $data = [
     "app_id" => $_ENV['ONESIGNAL_APP_ID'],
-    "included_segments" => ["Subscribed Users"],
+    "included_segments" => ["All"],
     "headings" => ["en" => "Hello"],
     "contents" => ["en" => "testing cron jobs"],
 ];
